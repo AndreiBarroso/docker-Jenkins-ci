@@ -31,7 +31,9 @@ tudo o que está definido no arquivo `docker-compose.yml`
 
 ## Running
 
-To run the container, type the following
+
+Para executar o contêiner, digite o seguinte
+
 
 ```Bash
 # Run without mounting the docker socket
@@ -57,15 +59,15 @@ docker run \
   -u 1000 \
   istresearch/jenkins:latest
 ```
-- *-d* to run in the background
-- *--net=host* so the container shares the host network stack and has access to the /etc/hosts for network communication
-- *-p 8080:8080* so the 8080 port in the container receives all requests to port 8080 on the host. Jenkins runs on Tomcat, which uses port 8080 as the default
-- *-p 5000:5000* required to attach slave servers; port 50000 is used to communicate between master and slaves
-- *-v /data/jenkins:/var/jenkins_home* to bind host directory /data/jenkins to the container directory /var/jennkins_home
-- *-v /var/run/docker.sock:/var/run/docker.sock* Mounts the docker socket into the container 
-- *-u 1000* jenkins user uid is 1000, same as ubuntu and vagrant uid's are 1000
+- * -d * para executar em segundo plano
+- * - net = host * para que o contêiner compartilhe a pilha de rede do host e tenha acesso ao / etc / hosts para comunicação de rede
+- * -p 8080: 8080 * para que a porta 8080 no contêiner receba todas as solicitações para a porta 8080 no host. Jenkins é executado no Tomcat, que usa a porta 8080 como padrão
+- * -p 5000: 5000 * necessário para conectar servidores escravos; a porta 50000 é usada para a comunicação entre mestre e escravos
+- * -v / data / jenkins: / var / jenkins_home * para vincular o diretório do host / data / jenkins ao diretório do contêiner / var / jennkins_home
+- * -v /var/run/docker.sock:/var/run/docker.sock* Monta o soquete do docker no contêiner
+- * -u 1000 * jenkins usuário uid é 1000, o mesmo que ubuntu e vagrant uid é 1000
 
-Alternatively, you can run one of the following
+Como alternativa, você pode executar um dos seguintes
 
 ```Bash
 # Uses the istresearch/jenkins:latest image
