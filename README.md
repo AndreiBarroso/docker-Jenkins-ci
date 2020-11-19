@@ -1,33 +1,33 @@
 # jenkins-ist
-Github repo for automated builds of a custom version of Jenkins on docker hub.
+Repo do Github para compilações automatizadas de uma versão personalizada do Jenkins no hub do docker.
 
 ## Installation
 
-Ensure /data/jenkins/ directory is created and has the correct permissions.
-- If you are using vagrant, the directory should be owned by vagrant.
-  If you are logged in to an Ubuntu EC2 instance, then the ubuntu user should own the directory.
-- If it needs to be created:
+Certifique-se de que o diretório / data / jenkins / seja criado e tenha as permissões corretas.
+- Se você estiver usando o vagrant, o diretório deve pertencer ao vagrant.
+  Se você estiver conectado a uma instância do Ubuntu EC2, o usuário do ubuntu deve possuir o diretório.
+- Se precisar ser criado:
   1. Run *sudo mkdir /data*
   2. Run *sudo mkdir /data/jenkins*
   3. Run *sudo chown 1000 /data/jenkins*
 
 ## Building
 
-To build the Jenkins docker image that you want to run in a container. Ensure
-you are in the `/jenkins` directory with the *Dockerfile* and run
+Para construir a imagem docker do Jenkins que você deseja executar em um contêiner. Garantir
+você está no diretório `/ jenkins` com o * Dockerfile * e execute
 
-```Bash
-docker build -t istresearch/jenkins:[Version]
-```
+`` `Bash
+docker build -t istresearch / jenkins: [Versão]
+`` `
 
-Alternatively you can do.
-```Bash
-docker-compose build
-```
+Alternativamente, você pode fazer.
+`` `Bash
+compilação docker-compose
+`` `
 
-> The first approach allows you to specify the tags that you want to use for the
-docker image. Meanwhile, with the second approach,  you are forced to use
-whatever is defined in the `docker-compose.yml` file
+> A primeira abordagem permite que você especifique as tags que deseja usar para o
+imagem docker. Enquanto isso, com a segunda abordagem, você é forçado a usar
+tudo o que está definido no arquivo `docker-compose.yml`
 
 ## Running
 
